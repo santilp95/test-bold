@@ -1,46 +1,58 @@
-/* sales-summary-card.component.css */
 .card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .card-header {
-    background-color: #711e6c; /* Dark purple background */
-    color: white;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .info-icon {
-    background-color: #ef434e; /* Red background */
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 12px;
-  }
-  
-  .card-body {
-    padding: 15px;
-    color: #323232; /* Dark text color */
-  }
-  
-  .sales-amount {
-    font-size: 2em;
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .sales-month {
-    font-size: 1em;
-    margin: 0;
-  }
-  
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-header {
+  background: linear-gradient(90deg, rgba(136,50,92,1) 22%, rgba(155,83,118,1) 46%, rgba(167,103,134,1) 85%);
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.info-icon {
+  background-color: transparent;
+  border: 2px solid white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+.card-body {
+  align-items: center;
+  color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px;
+  height: 80px;
+}
+
+.sales-amount {
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+  background: -webkit-linear-gradient(90deg, rgba(136,50,92,1) 22%, rgba(155,83,118,1) 46%, rgba(167,103,134,1) 85%);
+  background: linear-gradient(90deg, rgba(136,50,92,1) 22%, rgba(155,83,118,1) 46%, rgba(167,103,134,1) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.sales-month {
+  font-size: 1em;
+  margin: 0;
+  color: #111e6c;
+}
