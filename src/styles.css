@@ -21,3 +21,7 @@ app-root {
 .main {
   flex: 1;
 }
+
+.main-content {
+  margin: 0px 25px;
+}
