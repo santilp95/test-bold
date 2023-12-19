@@ -1,0 +1,20 @@
+<!-- button-group.component.html -->
+<div class="button-group">
+    <app-selectable-button
+      [label]="'Hoy'"
+      [isActive]="selectedButton === 'Hoy'"
+      (select)="selectButton('Hoy')"
+    ></app-selectable-button>
+
+    <app-selectable-button
+    [label]="'Esta semana'"
+    [isActive]="selectedButton === 'Esta semana'"
+    (select)="selectButton('Esta semana')"
+  ></app-selectable-button>
+
+    <app-selectable-button
+    [label]="'Septiembre'"
+    [isActive]="selectedButton === 'Septiembre'"
+    (select)="selectButton('Septiembre')"
+    ></app-selectable-button>
+  </div>

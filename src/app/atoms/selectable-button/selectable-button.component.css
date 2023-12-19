@@ -1,0 +1,64 @@
+/* 
+button {
+    background-color: transparent;
+    border: 1px solid #111e6c;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 0 4px;
+    cursor: pointer;
+  }
+  
+  button.selected {
+    background-color: #111e6c;
+    color: white;
+  } */
+
+/* button:not(.selected):hover {
+    background-color: #ddd;
+  }
+   */
+
+/* button {
+  border: 1px solid #111e6c;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+button.active {
+  background-color: #111e6c;
+  color: white;
+} */
+
+
+/* selectable-button.component.css */
+button {
+  background-color: white;
+  color: #111e6c; /* Color for inactive state */
+  border: 1px solid #111e6c;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+button.active {
+  background-color: #111e6c; /* Color for active state */
+  color: white; /* Text color for active state */
+  border: 1px solid #111e6c;
+}
+
+/* Add styles for hover state if needed */
+button:hover {
+  background-color: #111e6c; /* Or a slightly different color for hover */
+  color: white;
+}
+
+/* Ensure that text doesn't select on double click for better UX */
+button:active,
+button:focus {
+  user-select: none;
+}
