@@ -1,0 +1,60 @@
+.main-header {
+  /* Gradient background from blue to purple */
+  background: linear-gradient(90deg, #711e6c 0%, #ef434e 100%);
+  padding: 1rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Align the logo vertically */
+  text-decoration: none;
+}
+
+.brand-logo {
+  /* Adjust your logo size as needed */
+  width: auto; /* Adjust width as needed */
+  height: 50px; /* Set a fixed height for your logo */
+}
+
+/* Assuming you have anchor tags for 'Mi negocio' and 'Ayuda' */
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* Add other styles here for spacing, font, etc. */
+}
+
+.nav-link {
+  color: white; /* Set text color to white */
+  text-decoration: none;
+  margin-left: 20px; /* Add space between the links */
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  /* You might want to add hover effects, etc. */
+}
+
+/* This is for the help icon, assuming you are using a font icon like FontAwesome */
+.help-icon {
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  /* You may need to adjust the logo and nav links for mobile */
+}
+
+.navbar-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
