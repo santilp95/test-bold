@@ -5,11 +5,11 @@
 }
 
 .toggle-button {
-    background-color: #f9c0c0;
+    background-color: white;
     border-radius: 20px;
-    border: 1px solid #f9c0c0;
+    border: 1px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: #111e6c;
     cursor: pointer;
     flex: 1;
     font-size: 16px;
@@ -17,6 +17,11 @@
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
+
+.toggle-button:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+  }
 
 .filter-options {
   background-color: white;

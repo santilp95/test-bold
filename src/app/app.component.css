@@ -1,14 +1,16 @@
-/* .card-container{
+.mt-80{
     margin-top: 80px;
-    width: 320px;
-    margin-left: 20px;
-} */
+}
 
 .today-card {
-  margin-top: 80px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+  flex: 2;
 }
 
 app-sales-summary-card {
@@ -16,5 +18,9 @@ app-sales-summary-card {
 }
 
 app-button-group {
-  flex: 2;
+  flex: 1;
+}
+
+app-filter-toggle {
+  flex: 1;
 }
