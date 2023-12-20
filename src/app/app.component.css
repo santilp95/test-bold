@@ -4,8 +4,17 @@
     margin-left: 20px;
 } */
 
-.today-card{
-    display: flex;
-    margin: 20px;
-    justify-content: space-between;
+.today-card {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+app-sales-summary-card {
+  flex: 1;
+}
+
+app-button-group {
+  flex: 2;
 }

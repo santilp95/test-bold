@@ -1,29 +1,28 @@
 
-button {
-  background-color: white;
-  color: #111e6c; /* Color for inactive state */
-  border: 0px solid #111e6c;
+:host {
+  background-color: transparent;
+  border: 1px solid transparent;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1;
+  text-align: center;
+  min-width: 100px;
+  color: #111e6c;
 }
 
-button.active {
-  background-color: #111e6c; /* Color for active state */
-  color: white; /* Text color for active state */
-  border: 1px solid #111e6c;
-}
-
-/* Add styles for hover state if needed */
-button:hover {
-  background-color: #111e6c; /* Or a slightly different color for hover */
+:host(:active) {
+  background-color: #111e6c;
   color: white;
 }
 
-/* Ensure that text doesn't select on double click for better UX */
-button:active,
-button:focus {
+:host(:hover) {
+  border: 1px solid #111e6c;
+}
+
+:host(:active),
+:host(:focus ){
   user-select: none;
 }
