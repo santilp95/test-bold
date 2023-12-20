@@ -1,0 +1,25 @@
+/* filter-toggle.component.css */
+.filter-toggle-container {
+  position: relative;
+  /* Set the width according to your design requirements */
+  width: 200px; /* Example width */
+}
+
+.toggle-button {
+  /* Style your button to match your design */
+}
+
+.filter-options {
+  position: absolute;
+  top: 100%; /* Position the dropdown right below the button */
+  left: 0;
+  width: 100%; /* Make the dropdown the same width as the button */
+  /* Add other styles like box-shadow, background-color as needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

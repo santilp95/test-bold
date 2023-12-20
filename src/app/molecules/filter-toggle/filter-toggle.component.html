@@ -1,1 +1,14 @@
-<p>filter-toggle works!</p>
+<!-- filter-toggle.component.html -->
+<div class="filter-toggle-container">
+    <button (click)="toggleFilter()" class="toggle-button">Filtrar</button>
+
+    <div *ngIf="showFilter" class="filter-options">
+        <!-- Insert your custom-checkbox components here -->
+        <app-custom-checkbox label="Cobro con datafono"></app-custom-checkbox>
+        <app-custom-checkbox label="Cobros con link de pago"></app-custom-checkbox>
+        <app-custom-checkbox label="Ver todos"></app-custom-checkbox>
+
+        <!-- Insert your submit-button component here -->
+        <app-submit-button label="Aplicar" (clicked)="applyFilters()"></app-submit-button>
+    </div>
+</div>
