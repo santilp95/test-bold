@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submit-button',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './submit-button.component.css'
 })
 export class SubmitButtonComponent {
+  @Input() label: string = 'Aplicar';
 
+  // @Output() clicked = new EventEmitter<void>();
+
+  // onClick() {
+  //   this.clicked.emit();
+  // }
 }
