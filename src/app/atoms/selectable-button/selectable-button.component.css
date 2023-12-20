@@ -19,7 +19,9 @@
 }
 
 :host(:hover) {
-  border: 1px solid #111e6c;
+  border: 1px solid #e5e7ef;
+  background-color: #e5e7ef;
+  font-weight: bold;
 }
 
 :host(:active),
