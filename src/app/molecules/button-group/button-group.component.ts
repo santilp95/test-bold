@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { SelectableButtonComponent } from '../../atoms/selectable-button/selectable-button.component';
+
+import { SelectableButtonComponent } from '../../atoms';
 
 @Component({
   selector: 'app-button-group',
