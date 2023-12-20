@@ -1,0 +1,16 @@
+/* custom-checkbox.component.css */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Adjust spacing between the checkbox and the label */
+  }
+  
+  .checkbox-text {
+    /* Add your styles for the text next to the checkbox */
+    color: #111e6c; /* Example text color */
+  }
+  

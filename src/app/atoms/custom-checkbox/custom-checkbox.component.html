@@ -1,1 +1,4 @@
-<p>custom-checkbox works!</p>
+<label class="custom-checkbox">
+    <input type="checkbox" [checked]="isChecked" (change)="toggleCheckbox()" />
+    <span class="checkbox-text">{{ label }}</span>
+</label>
