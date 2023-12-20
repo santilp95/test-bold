@@ -36,3 +36,7 @@
   top: 100%; /* Position the dropdown right below the button */
   width: 100%; /* Make the dropdown the same width as the button */
 }
+
+app-submit-button {
+    align-self: center;
+}
