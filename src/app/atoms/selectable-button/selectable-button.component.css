@@ -1,16 +1,16 @@
 
 :host {
   background-color: transparent;
-  border: 1px solid transparent;
-  padding: 10px 20px;
   border-radius: 20px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s, color 0.3s;
-  flex: 1;
-  text-align: center;
-  min-width: 100px;
+  border: 1px solid transparent;
   color: #111e6c;
+  cursor: pointer;
+  flex: 1;
+  min-width: 100px;
+  outline: none;
+  padding: 10px 20px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 :host(:active) {
