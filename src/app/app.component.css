@@ -3,24 +3,27 @@
 }
 
 .today-card {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, minmax(60px, auto));
   gap: 20px;
-}
-
-.flex-direction-column {
-  flex-direction: column;
-  flex: 2;
+  align-items: start;
 }
 
 app-sales-summary-card {
-  flex: 1;
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  height: 100%;
 }
 
 app-button-group {
-  flex: 1;
+  grid-column: 2 / span 3;
+  grid-row: 1;
 }
 
 app-filter-toggle {
-  flex: 1;
+  grid-column: 4;
+  grid-row: 2 ;
+  height: 100%;
 }
+

@@ -2,6 +2,7 @@
 .filter-toggle-container {
   position: relative;
   display: flex;
+  width: 100%; 
 }
 
 .toggle-button {

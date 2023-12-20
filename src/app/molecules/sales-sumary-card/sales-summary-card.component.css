@@ -4,6 +4,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+  height: 100%;
 }
 
 .card-header {
@@ -36,7 +37,7 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 15px;
-  height: 80px;
+  height: calc(100% - 40px);
 }
 
 .sales-amount {
