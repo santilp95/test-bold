@@ -13,11 +13,6 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-:host(:active), {
-  background-color: #111e6c;
-  color: white;
-  border: 1px solid #111e6c;
-}
 :host(:hover) {
   border: 1px solid #e5e7ef;
   background-color: #e5e7ef;

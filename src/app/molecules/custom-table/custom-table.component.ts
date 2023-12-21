@@ -6,6 +6,7 @@ import {
   CreditCardDisplayComponent,
   IconTextComponent,
 } from '../../atoms';
+import { StateService } from '../../shared';
 
 interface ITransaction {
   status: string;
@@ -33,6 +34,7 @@ interface ITransaction {
   styleUrl: './custom-table.component.css',
 })
 export class CustomTableComponent {
+  title: string = 'Septiembre';
   transactions: ITransaction[] = [
     {
       status: 'Cobro exitoso',
@@ -70,4 +72,10 @@ export class CustomTableComponent {
       deduction: '-$1.500',
     },
   ];
+
+  constructor(private stateService: StateService) {
+    this.stateService.title$.subscribe((label: string) => {
+      this.title = label;
+    });
+  }
 }
