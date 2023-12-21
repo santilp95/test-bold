@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class CustomTableComponent {
   transactions = [
     {
-      icon: 'fas fa-check-circle', // Asume que tienes una clase correspondiente para éxito
+      icon: 'fas fa-solid fa-calculator',
       status: 'Cobro exitoso',
       date: '04/06/2020 - 17:14:24',
       paymentMethod: '**** **** **** 7771',
@@ -20,6 +20,14 @@ export class CustomTableComponent {
       amount: '$25.000',
       deduction: '-$1.500'
     },
-    // ... más transacciones
+    {
+      icon: 'fas fa-solid fa-link',
+      status: 'Cobro exitoso',
+      date: '04/06/2020 - 17:14:24',
+      paymentMethod: '**** **** **** 7771',
+      transactionId: 'GZEN23784UBV2',
+      amount: '$25.000',
+      deduction: '-$1.500'
+    },
   ];
 }

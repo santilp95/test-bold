@@ -2,8 +2,12 @@
 .icon-text-container {
   display: flex;
   align-items: center;
+  color: #111e6c;
+  justify-content: center;
 }
 
 .icon-text-container i {
   margin-right: 8px;
 }
+
+
