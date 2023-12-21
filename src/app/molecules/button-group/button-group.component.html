@@ -1,18 +1,11 @@
 <!-- button-group.component.html -->
 <div class="button-group">
-    <button app-selectable-button
-      [label]="'Hoy'"
-      [isActive]="selectedButton === 'Hoy'"
-      (select)="selectButton('Hoy')"
-    ></button>
-    <button app-selectable-button
-      [label]="'Esta semana'"
-      [isActive]="selectedButton === 'Esta semana'"
-      (select)="selectButton('Esta semana')"
-    ></button>
-    <button app-selectable-button
-      [label]="'Septiembre'"
-      [isActive]="selectedButton === 'Septiembre'"
-      (select)="selectButton('Septiembre')"
-    ></button>
-  </div>
+  <button
+    app-selectable-button
+    *ngFor="let label of ['Hoy', 'Esta semana', 'Septiembre']"
+    [label]="label"
+    [isActive]="selectedButton?.label === label"
+    (select)="selectButton($event)"
+    [class.has-active]="selectedButton?.label === label"
+  ></button>
+</div>

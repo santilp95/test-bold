@@ -10,11 +10,11 @@ import { Component, EventEmitter, HostListener, Input, Output } from '@angular/c
 export class SelectableButtonComponent {
   @Input() label: string = '';
   @Input() isActive: boolean = false;
-  @Output() select = new EventEmitter<string>();
+  @Output() select = new EventEmitter<SelectableButtonComponent>();
 
 
   @HostListener('click')
   selectButton() {
-    this.select.emit(this.label);
+    this.select.emit(this);
   }
 }
