@@ -17,6 +17,7 @@ interface ITransaction {
   transactionId: string;
   amount: string;
   deduction?: string;
+  paymentType: string;
 }
 
 @Component({
@@ -43,6 +44,7 @@ export class CustomTableComponent {
       transactionId: 'GZEN23784UBV2',
       amount: '$25.000',
       deduction: '-$1.500',
+      paymentType: 'link',
     },
     {
       status: 'Cobro no realizado',
@@ -53,6 +55,7 @@ export class CustomTableComponent {
       },
       transactionId: 'GZEN23784UBV2',
       amount: '$25.000',
+      paymentType: 'link',
     },
     {
       status: 'Cobro no realizado',
@@ -63,6 +66,8 @@ export class CustomTableComponent {
       },
       transactionId: 'GZEN23784UBV2',
       amount: '$25.000',
+      paymentType: 'dataphone',
+      deduction: '-$1.500',
     },
   ];
 }
