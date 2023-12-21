@@ -29,9 +29,19 @@
   text-align: left;
 }
 
+.table-row.has-deduction{
+  border-left: 5px solid #111e6c;
+}
+
+.table-row.no-deduction{
+  border-left: 5px solid  #323232;
+}
+
+
 .table-header {
-  background-color: #eeeeee;
-  font-weight: bold;
+  background-color: white;
+  border-bottom: 1px solid #dddddd;
+  color: #323232;
 }
 
 .table-row {

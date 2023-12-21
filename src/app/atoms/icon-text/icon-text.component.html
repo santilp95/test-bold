@@ -1,3 +1,4 @@
-<span class="icon-text-container">
-    <i [class]="iconClass"></i> {{ text }}
-</span>
+<div [class.has-deduction]="deduction" [class.no-deduction]="!deduction" class="icon-text-container">
+    <i [class]="iconClass"></i>
+    <span>{{ text }}</span>
+</div>

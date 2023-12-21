@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 export class IconTextComponent {
   @Input() iconClass: string = '';
   @Input() text: string = '';
+  @Input() deduction?: string;
 }

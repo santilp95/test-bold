@@ -54,5 +54,15 @@ export class CustomTableComponent {
       transactionId: 'GZEN23784UBV2',
       amount: '$25.000',
     },
+    {
+      status: 'Cobro no realizado',
+      date: '04/06/2020 - 17:14:24',
+      paymentMethod: {
+        icon: 'visa',
+        number: '**** **** **** 7771',
+      },
+      transactionId: 'GZEN23784UBV2',
+      amount: '$25.000',
+    },
   ];
 }

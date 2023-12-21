@@ -10,11 +10,17 @@
       <div>ID transacción Bold</div>
       <div>Monto</div>
     </div>
-    <div class="table-row" *ngFor="let transaction of transactions">
+    <div
+      class="table-row"
+      [class.has-deduction]="transaction.deduction"
+      [class.no-deduction]="!transaction.deduction"
+      *ngFor="let transaction of transactions"
+    >
       <div>
         <app-icon-text
           [iconClass]="transaction.deduction ? 'fas fa-solid fa-calculator' : 'fas fa-solid fa-link'"
           [text]="transaction.status"
+          [deduction]="transaction.deduction"
         />
       </div>
       <div style="color: #969696;">
