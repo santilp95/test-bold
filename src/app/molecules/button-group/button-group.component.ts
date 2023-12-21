@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-
-import { SelectableButtonComponent } from '../../atoms';
 import { CommonModule } from '@angular/common';
+
+import { StateService } from '../../shared';
+import { SelectableButtonComponent } from '../../atoms';
 
 @Component({
   selector: 'app-button-group',
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonGroupComponent {
+  constructor(private stateService: StateService) {}
   selectedButton: SelectableButtonComponent | null = null;;
 
   selectButton(button: SelectableButtonComponent): void {
@@ -22,6 +24,6 @@ export class ButtonGroupComponent {
     button.isActive = true;
     this.selectedButton = button;
 
-    console.log(`Selected button: ${button.label}`);
+    this.stateService.setTitle(button.label);
   }
 }

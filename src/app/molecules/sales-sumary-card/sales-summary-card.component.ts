@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { StateService } from '../../shared';
+
 @Component({
   selector: 'app-sales-summary-card',
   standalone: true,
@@ -8,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrl: './sales-summary-card.component.css'
 })
 export class SalesSummaryCardComponent {
-
+  title: string = 'Septiembre';
+  constructor(private stateService: StateService) {
+    this.stateService.title$.subscribe((label: string) => {
+      this.title = label;
+    });
+  }
 }
