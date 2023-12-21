@@ -1,0 +1,46 @@
+.table-wrapper {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-title {
+  background-color: #7B1FA2; /* Un color de fondo oscuro como en tu imagen */
+  color: white; /* Texto blanco para contraste */
+  padding: 10px 20px; /* Relleno para la cabecera */
+  font-size: 1.25rem; /* Tamaño de la fuente de la cabecera */
+  font-weight: bold; /* Texto en negrita para la cabecera */
+}
+.table-container {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 2fr 1fr; /* Ajusta estas fracciones según sea necesario */
+  padding: 10px;
+  align-items: center;
+}
+
+.table-header {
+  background-color: #eeeeee;
+  font-weight: bold;
+}
+
+.table-row {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row span {
+  display: block;
+}

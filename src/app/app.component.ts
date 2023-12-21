@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './atoms';
 import {
   ButtonGroupComponent,
+  CustomTableComponent,
   FilterToggleComponent,
   SalesSummaryCardComponent,
 } from './molecules';
@@ -19,6 +20,7 @@ import {
     SalesSummaryCardComponent,
     ButtonGroupComponent,
     FilterToggleComponent,
+    CustomTableComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
