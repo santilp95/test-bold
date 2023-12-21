@@ -1,0 +1,13 @@
+.amount-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.amount {
+  color: #00ff00;
+}
+
+.deduction {
+  color: #ff0000;
+}

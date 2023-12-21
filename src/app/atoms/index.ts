@@ -1,3 +1,4 @@
+export { AmountDisplayComponent } from "./amount-display/amount-display.component";
 export { CustomCheckboxComponent } from "./custom-checkbox/custom-checkbox.component";
 export { CreditCardDisplayComponent } from "./credit-card-display/credit-card-display.component";
 export { HeaderComponent } from "./header/header.component";
