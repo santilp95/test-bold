@@ -5,6 +5,7 @@
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
   height: 100%;
+  min-width: 350px;
 }
 
 .card-header {
