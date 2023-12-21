@@ -18,8 +18,6 @@ export class FilterToggleComponent {
   }
 
   applyFilters() {
-    // Handle the application of filters here
-    // After applying filters, you might want to close the filter options
     this.showFilter = false;
   }
 }
