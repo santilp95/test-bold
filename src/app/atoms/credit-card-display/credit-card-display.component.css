@@ -1,0 +1,7 @@
+.credit-card-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: #969696;
+}
