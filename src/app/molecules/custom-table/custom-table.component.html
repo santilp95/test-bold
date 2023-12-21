@@ -30,8 +30,10 @@
         {{ transaction.transactionId }}
       </div>
       <div>
-        <span>{{ transaction.amount }}</span>
-        <span *ngIf="transaction.deduction">({{ transaction.deduction }})</span>
+        <app-amount-display
+          [amount]="transaction.amount"
+          [deduction]="transaction.deduction"
+        />
       </div>
     </div>
   </div>
