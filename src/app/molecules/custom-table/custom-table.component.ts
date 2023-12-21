@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { CreditCardDisplayComponent, IconTextComponent } from '../../atoms';
 
 interface ITransaction {
-  icon: string;
   status: string;
   date: string;
   paymentMethod: {
@@ -13,7 +12,7 @@ interface ITransaction {
   };
   transactionId: string;
   amount: string;
-  deduction: string;
+  deduction?: string;
 }
 
 @Component({
@@ -30,7 +29,6 @@ interface ITransaction {
 export class CustomTableComponent {
   transactions: ITransaction[] = [
     {
-      icon: 'fas fa-solid fa-calculator',
       status: 'Cobro exitoso',
       date: '04/06/2020 - 17:14:24',
       paymentMethod: {
@@ -42,8 +40,7 @@ export class CustomTableComponent {
       deduction: '-$1.500'
     },
     {
-      icon: 'fas fa-solid fa-link',
-      status: 'Cobro exitoso',
+      status: 'Cobro no realizado',
       date: '04/06/2020 - 17:14:24',
       paymentMethod: {
         icon: 'visa',
@@ -51,7 +48,6 @@ export class CustomTableComponent {
       },
       transactionId: 'GZEN23784UBV2',
       amount: '$25.000',
-      deduction: '-$1.500'
     },
   ];
 }

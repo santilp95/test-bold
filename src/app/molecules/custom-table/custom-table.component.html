@@ -13,18 +13,22 @@
     <div class="table-row" *ngFor="let transaction of transactions">
       <div>
         <app-icon-text
-          [iconClass]="transaction.icon"
+          [iconClass]="transaction.deduction ? 'fas fa-solid fa-calculator' : 'fas fa-solid fa-link'"
           [text]="transaction.status"
         />
       </div>
-      <div>{{ transaction.date }}</div>
+      <div style="color: #969696;">
+        {{ transaction.date }}
+      </div>
       <div>
         <app-credit-card-display
           [cardNumber]="transaction.paymentMethod.number"
           [iconClass]="transaction.paymentMethod.icon"
         />
       </div>
-      <div>{{ transaction.transactionId }}</div>
+      <div style="color: #969696;">
+        {{ transaction.transactionId }}
+      </div>
       <div>
         <span>{{ transaction.amount }}</span>
         <span *ngIf="transaction.deduction">({{ transaction.deduction }})</span>

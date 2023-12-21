@@ -6,7 +6,7 @@
 }
 
 .table-title {
-  background-color: #7B1FA2;
+  background: linear-gradient(90deg, rgba(17,30,108,1) 49%, rgba(239,67,78,1) 100%);
   color: white;
   padding: 10px 20px;
   font-size: 1.25rem;
@@ -26,7 +26,7 @@
   grid-template-columns: 2fr 2fr 1.5fr 2fr 1fr;
   padding: 10px;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .table-header {

@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './icon-text.component.css'
 })
 export class IconTextComponent {
-  @Input() iconClass: string = ''; // This will be like 'fas fa-check' for Font Awesome
+  @Input() iconClass: string = '';
   @Input() text: string = '';
 }
