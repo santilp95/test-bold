@@ -40,10 +40,16 @@ export class FilterToggleComponent {
 
   onCheckboxChange(filter: { value: string, isChecked: boolean }) {
     console.log('Filter:', filter);
-    this.filterForm.controls[filter.value].setValue(filter.isChecked);
+    Object.keys(this.filterForm.controls).forEach(key => {
+      this.filterForm.controls[key].setValue(false);
+    });
+    if (filter.isChecked) {
+      this.filterForm.controls[filter.value].setValue(true);
+    }
   }
 
   onSubmit() {
     console.log('Form value:', this.filterForm.value);
+    this.showFilter = false;
   }
 }
