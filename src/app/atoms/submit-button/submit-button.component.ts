@@ -9,10 +9,4 @@ import { Component, Input } from '@angular/core';
 })
 export class SubmitButtonComponent {
   @Input() label: string = 'Aplicar';
-
-  // @Output() clicked = new EventEmitter<void>();
-
-  // onClick() {
-  //   this.clicked.emit();
-  // }
 }

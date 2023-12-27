@@ -2,12 +2,28 @@
 <div class="filter-toggle-container">
     <button (click)="toggleFilter()" class="toggle-button">Filtrar</button>
 
-    <div *ngIf="showFilter" class="filter-options">
-
-        <app-custom-checkbox label="Cobro con datafono"></app-custom-checkbox>
-        <app-custom-checkbox label="Cobros con link de pago"></app-custom-checkbox>
-        <app-custom-checkbox label="Ver todos"></app-custom-checkbox>
-
-        <app-submit-button label="Aplicar" (clicked)="applyFilters()"></app-submit-button>
-    </div>
+    <form *ngIf="showFilter" [formGroup]="filterForm" class="filter-options" (ngSubmit)="onSubmit()">
+        <app-custom-checkbox
+            value="datafono"
+            formControlName="datafono"
+            label="Cobro con datafono"
+            (checkedChange)="onCheckboxChange($event)"
+        >
+        </app-custom-checkbox>
+        <app-custom-checkbox
+            value="linkDePago"
+            formControlName="linkDePago"
+            label="Cobros con link de pago"
+            (checkedChange)="onCheckboxChange($event)"
+        >
+        </app-custom-checkbox>
+        <app-custom-checkbox
+            value="verTodos"
+            formControlName="verTodos"
+            label="Ver todos"
+            (checkedChange)="onCheckboxChange($event)"
+        >
+        </app-custom-checkbox>
+        <app-submit-button label="Aplicar"></app-submit-button>
+    </form>
 </div>
