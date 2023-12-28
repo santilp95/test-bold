@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {
@@ -6,7 +6,9 @@ import {
   CreditCardDisplayComponent,
   IconTextComponent,
 } from '../../atoms';
-import { StateService } from '../../shared';
+import { FilterTableService, StateService } from '../../shared';
+import { CheckboxStatus } from '../filter-toggle/filter-toggle.component';
+
 
 interface ITransaction {
   status: string;
@@ -33,7 +35,8 @@ interface ITransaction {
   templateUrl: './custom-table.component.html',
   styleUrl: './custom-table.component.css',
 })
-export class CustomTableComponent {
+export class CustomTableComponent implements OnInit {
+
   title: string = 'Septiembre';
   transactions: ITransaction[] = [
     {
@@ -73,9 +76,27 @@ export class CustomTableComponent {
     },
   ];
 
-  constructor(private stateService: StateService) {
+  filteredTransactions: ITransaction[] = [];
+
+  constructor(private stateService: StateService,private filterTableService: FilterTableService) {
     this.stateService.title$.subscribe((label: string) => {
       this.title = label;
     });
+  }
+
+  ngOnInit() {
+    this.filterTableService.currentFilter.subscribe(filter => {
+      this.applyFilter(filter);
+    });
+  }
+
+  applyFilter(filter: CheckboxStatus) {
+    if (filter.datafono) {
+      this.filteredTransactions = this.transactions.filter(t => t.paymentType === 'dataphone');
+    } else if (filter.linkDePago) {
+      this.filteredTransactions = this.transactions.filter(t => t.paymentType === 'link');
+    } else if (filter.verTodos) {
+      this.filteredTransactions = [...this.transactions];
+    }
   }
 }

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { CustomCheckboxComponent, SubmitButtonComponent } from '../../atoms';
 import { CheckboxState } from '../../atoms/custom-checkbox/custom-checkbox.component';
+import { FilterTableService } from '../../shared';
 
 export interface CheckboxStatus {
   datafono: boolean;
@@ -27,7 +28,10 @@ export class FilterToggleComponent {
   showFilter: boolean = false;
   filterForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private filterTableService: FilterTableService,
+  ) {
     this.filterForm = this.fb.group<CheckboxStatus>({
       datafono: false,
       linkDePago: false,
@@ -50,6 +54,7 @@ export class FilterToggleComponent {
 
   onSubmit() {
     console.log('Form value:', this.filterForm.value);
+    this.filterTableService.changeFilter(this.filterForm.value);
     this.showFilter = false;
   }
 }

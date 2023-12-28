@@ -14,7 +14,7 @@
       class="table-row"
       [class.has-deduction]="transaction.deduction"
       [class.no-deduction]="!transaction.deduction"
-      *ngFor="let transaction of transactions"
+      *ngFor="let transaction of filteredTransactions"
     >
       <div>
         <app-icon-text
