@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+
 import { CheckboxStatus } from '../molecules/filter-toggle/filter-toggle.component';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class FilterTableService {
     linkDePago: false,
     verTodos: true
   });
-  currentFilter = this.filterSource.asObservable();
+  currentFilter$ = this.filterSource.asObservable();
   constructor() { }
   changeFilter(filter: CheckboxStatus) {
     this.filterSource.next(filter);

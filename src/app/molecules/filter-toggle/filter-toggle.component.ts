@@ -53,7 +53,6 @@ export class FilterToggleComponent {
   }
 
   onSubmit() {
-    console.log('Form value:', this.filterForm.value);
     this.filterTableService.changeFilter(this.filterForm.value);
     this.showFilter = false;
   }

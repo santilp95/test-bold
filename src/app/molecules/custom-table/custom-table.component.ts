@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 import {
   AmountDisplayComponent,
@@ -35,7 +36,8 @@ interface ITransaction {
   templateUrl: './custom-table.component.html',
   styleUrl: './custom-table.component.css',
 })
-export class CustomTableComponent implements OnInit {
+export class CustomTableComponent implements OnInit , OnDestroy{
+  private filterSubscription: Subscription = new Subscription();
 
   title: string = 'Septiembre';
   transactions: ITransaction[] = [
@@ -85,9 +87,13 @@ export class CustomTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filterTableService.currentFilter.subscribe(filter => {
+    this.filterSubscription = this.filterTableService.currentFilter$.subscribe(filter => {
       this.applyFilter(filter);
     });
+  }
+
+  ngOnDestroy() {
+    this.filterSubscription.unsubscribe();
   }
 
   applyFilter(filter: CheckboxStatus) {
@@ -95,7 +101,7 @@ export class CustomTableComponent implements OnInit {
       this.filteredTransactions = this.transactions.filter(t => t.paymentType === 'dataphone');
     } else if (filter.linkDePago) {
       this.filteredTransactions = this.transactions.filter(t => t.paymentType === 'link');
-    } else if (filter.verTodos) {
+    } else {
       this.filteredTransactions = [...this.transactions];
     }
   }
