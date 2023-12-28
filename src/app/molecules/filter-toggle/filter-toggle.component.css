@@ -20,6 +20,10 @@
     min-width: 240px;
 }
 
+.toggle-button.active {
+    border-radius: 20px 20px 0 0;
+}
+
 .toggle-button:hover {
     background-color: #f0f0f0; /* Slightly darker background on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
@@ -27,8 +31,8 @@
 
 .filter-options {
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 10px;

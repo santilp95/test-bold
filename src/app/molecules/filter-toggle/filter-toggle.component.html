@@ -1,6 +1,6 @@
 <!-- filter-toggle.component.html -->
 <div class="filter-toggle-container">
-    <button (click)="toggleFilter()" class="toggle-button">Filtrar</button>
+    <button (click)="toggleFilter()" class="toggle-button" [class.active]="showFilter">Filtrar</button>
 
     <form *ngIf="showFilter" [formGroup]="filterForm" class="filter-options" (ngSubmit)="onSubmit()">
         <app-custom-checkbox
