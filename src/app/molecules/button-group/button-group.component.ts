@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StateService } from '../../shared';
@@ -12,14 +12,14 @@ import { SelectableButtonComponent } from '../../atoms';
   styleUrl: './button-group.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class ButtonGroupComponent {
+export class ButtonGroupComponent{
   selectedButton: SelectableButtonComponent | null = null;
   constructor(private stateService: StateService) {
-    const selectedButtonLabel = this.stateService.getSelectedButton();
-    this.selectedButton = { label: selectedButtonLabel, isActive: true } as SelectableButtonComponent;
-
-
+    this.stateService.getSelectedButton().subscribe(selectedButtonLabel => {
+      this.selectedButton = { label: selectedButtonLabel, isActive: true } as SelectableButtonComponent;
+    });
   }
+
 
   selectButton(button: SelectableButtonComponent): void {
     if (this.selectedButton) {

@@ -40,7 +40,7 @@ interface ITransaction {
 export class CustomTableComponent implements OnInit , OnDestroy{
   private filterSubscription: Subscription = new Subscription();
 
-  title: string = 'Septiembre';
+  title: string | null = null;
   transactions: ITransaction[] = [
     {
       status: 'Cobro exitoso',
@@ -82,7 +82,7 @@ export class CustomTableComponent implements OnInit , OnDestroy{
   filteredTransactions: ITransaction[] = [];
 
   constructor(private stateService: StateService,private filterTableService: FilterTableService) {
-    this.stateService.title$.subscribe((label: string) => {
+    this.stateService.title$.subscribe((label: string | null) => {
       this.title = label;
     });
   }

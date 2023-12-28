@@ -40,7 +40,9 @@ export class FilterToggleComponent implements OnInit {
   }
 
   ngOnInit() {
-    const storedFilter = localStorage.getItem('filter');
+    const storedFilter = typeof window !== 'undefined' && window.localStorage
+      ?localStorage.getItem('filter')
+      :null;
     if (storedFilter) {
       this.filterForm.setValue(JSON.parse(storedFilter));
       this.filterTableService.changeFilter(this.filterForm.value);
