@@ -6,10 +6,20 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class StateService {
 
-  private titleSource = new BehaviorSubject<string>('Septiembre');
+  private initialValues: string = 'Septiembre';
+
+  private titleSource = new BehaviorSubject<string>(this.initialValues);
   title$ = this.titleSource.asObservable();
 
   setTitle(title: string) {
     this.titleSource.next(title);
+    localStorage.setItem('selectedButton', title);
+  }
+
+  getSelectedButton(): string {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('selectedButton') || this.initialValues;
+    }
+    return this.initialValues;
   }
 }

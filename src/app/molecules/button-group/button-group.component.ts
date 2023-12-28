@@ -13,8 +13,13 @@ import { SelectableButtonComponent } from '../../atoms';
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonGroupComponent {
-  constructor(private stateService: StateService) {}
-  selectedButton: SelectableButtonComponent | null = null;;
+  selectedButton: SelectableButtonComponent | null = null;
+  constructor(private stateService: StateService) {
+    const selectedButtonLabel = this.stateService.getSelectedButton();
+    this.selectedButton = { label: selectedButtonLabel, isActive: true } as SelectableButtonComponent;
+
+
+  }
 
   selectButton(button: SelectableButtonComponent): void {
     if (this.selectedButton) {
