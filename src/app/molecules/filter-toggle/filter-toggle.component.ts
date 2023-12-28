@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,7 +24,7 @@ export interface CheckboxStatus {
   templateUrl: './filter-toggle.component.html',
   styleUrl: './filter-toggle.component.css'
 })
-export class FilterToggleComponent {
+export class FilterToggleComponent implements OnInit {
   showFilter: boolean = false;
   filterForm: FormGroup;
 
@@ -37,6 +37,14 @@ export class FilterToggleComponent {
       linkDePago: false,
       verTodos: false,
     });
+  }
+
+  ngOnInit() {
+    const storedFilter = localStorage.getItem('filter');
+    if (storedFilter) {
+      this.filterForm.setValue(JSON.parse(storedFilter));
+      this.filterTableService.changeFilter(this.filterForm.value);
+    }
   }
 
   toggleFilter() {
@@ -53,6 +61,7 @@ export class FilterToggleComponent {
   }
 
   onSubmit() {
+    localStorage.setItem('filter', JSON.stringify(this.filterForm.value));
     this.filterTableService.changeFilter(this.filterForm.value);
     this.showFilter = false;
   }

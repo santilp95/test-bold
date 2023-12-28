@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 
 import {
   AmountDisplayComponent,
@@ -87,7 +88,9 @@ export class CustomTableComponent implements OnInit , OnDestroy{
   }
 
   ngOnInit() {
-    this.filterSubscription = this.filterTableService.currentFilter$.subscribe(filter => {
+    this.filterSubscription = this.filterTableService.currentFilter$.pipe(
+      startWith(this.filterTableService.getInitialFilter())
+    ).subscribe(filter => {
       this.applyFilter(filter);
     });
   }

@@ -7,14 +7,20 @@ import { CheckboxStatus } from '../molecules/filter-toggle/filter-toggle.compone
   providedIn: 'root'
 })
 export class FilterTableService {
-  private filterSource = new BehaviorSubject<CheckboxStatus>({
+  private initialValues: CheckboxStatus = {
     datafono: false,
     linkDePago: false,
-    verTodos: true
-  });
+    verTodos: false ,
+  }
+  private filterSource = new BehaviorSubject<CheckboxStatus>(this.initialValues);
   currentFilter$ = this.filterSource.asObservable();
   constructor() { }
   changeFilter(filter: CheckboxStatus) {
     this.filterSource.next(filter);
+  }
+
+  getInitialFilter(): CheckboxStatus {
+    const storedFilter = localStorage.getItem('filter');
+    return storedFilter ? JSON.parse(storedFilter) : this.initialValues;
   }
 }
