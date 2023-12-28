@@ -1,6 +1,11 @@
 import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+export interface CheckboxState {
+  name: string;
+  isChecked: boolean;
+}
+
 @Component({
   selector: 'app-custom-checkbox',
   standalone: true,
@@ -16,10 +21,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class CustomCheckboxComponent implements ControlValueAccessor{
-  @Input() value: string = 'verTodos';
+  @Input() name: string = 'verTodos';
   @Input() label: string = 'Ver todos';
-  @Input() isChecked: boolean = false;
-  @Output() checkedChange = new EventEmitter<{ value: string, isChecked: boolean }>();
+  @Input() value: boolean = false;
+  @Output() checkedChange = new EventEmitter<CheckboxState>();
 
 
   private onChange = (isChecked: boolean) => {};
@@ -28,14 +33,14 @@ export class CustomCheckboxComponent implements ControlValueAccessor{
 
   onCheckboxChange(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.isChecked = input.checked;
-    this.onChange(this.isChecked);
+    this.value = input.checked;
+    this.onChange(this.value);
     this.onTouched();
-    this.checkedChange.emit({ value: this.value, isChecked: this.isChecked });
+    this.checkedChange.emit({ name: this.name, isChecked: this.value });
   }
 
   writeValue(isChecked: boolean): void {
-    this.isChecked = isChecked;
+    this.value = isChecked;
   }
 
   registerOnChange(fn: (value: boolean) => void): void {

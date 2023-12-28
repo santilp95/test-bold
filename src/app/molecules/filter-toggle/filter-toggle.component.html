@@ -4,21 +4,21 @@
 
     <form *ngIf="showFilter" [formGroup]="filterForm" class="filter-options" (ngSubmit)="onSubmit()">
         <app-custom-checkbox
-            value="datafono"
+            name="datafono"
             formControlName="datafono"
             label="Cobro con datafono"
             (checkedChange)="onCheckboxChange($event)"
         >
         </app-custom-checkbox>
         <app-custom-checkbox
-            value="linkDePago"
+            name="linkDePago"
             formControlName="linkDePago"
             label="Cobros con link de pago"
             (checkedChange)="onCheckboxChange($event)"
         >
         </app-custom-checkbox>
         <app-custom-checkbox
-            value="verTodos"
+            name="verTodos"
             formControlName="verTodos"
             label="Ver todos"
             (checkedChange)="onCheckboxChange($event)"

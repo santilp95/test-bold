@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { CustomCheckboxComponent, SubmitButtonComponent } from '../../atoms';
+import { CheckboxState } from '../../atoms/custom-checkbox/custom-checkbox.component';
 
-interface CheckboxStatus {
+export interface CheckboxStatus {
   datafono: boolean;
   linkDePago: boolean;
   verTodos: boolean;
@@ -38,13 +39,12 @@ export class FilterToggleComponent {
     this.showFilter = !this.showFilter;
   }
 
-  onCheckboxChange(filter: { value: string, isChecked: boolean }) {
-    console.log('Filter:', filter);
+  onCheckboxChange(filter: CheckboxState) {
     Object.keys(this.filterForm.controls).forEach(key => {
       this.filterForm.controls[key].setValue(false);
     });
     if (filter.isChecked) {
-      this.filterForm.controls[filter.value].setValue(true);
+      this.filterForm.controls[filter.name].setValue(true);
     }
   }
 
